@@ -1,4 +1,4 @@
-/* GOD MODE CSS - Beyond Ultra Level Effects */
+/* GOD MODE CSS - Optimized for 100% Zoom */
 * {
   margin: 0;
   padding: 0;
@@ -8,42 +8,34 @@
   user-select: none;
 }
 
-/* Multiple Animated Backgrounds */
+/* Full-Screen Animated Background */
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460, #ff0099, #00ffff);
-  background-size: 500% 500%;
-  animation: bgShift 12s infinite alternate ease-in-out, bgWave 15s infinite alternate;
-  color: #ffffff;
-  perspective: 2000px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  animation: gradientShift 15s ease infinite;
   overflow: hidden;
   flex-direction: column;
-  padding: 5vw; /* Responsive padding */
+  padding: 20px; /* Adjusted padding for 100% zoom */
 }
 
-@keyframes bgShift {
+@keyframes gradientShift {
   0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-@keyframes bgWave {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
-}
-
-/* Glassmorphic Container */
+/* Glassmorphic Container - Responsive Sizing */
 .container {
   background: rgba(255, 255, 255, 0.1);
-  padding: 5vw;
+  padding: 20px; /* Adjusted padding for 100% zoom */
   border-radius: 20px;
   box-shadow: 0 10px 50px rgba(0, 0, 0, 0.4);
   text-align: center;
-  max-width: 90%;
-  width: 100%;
-  max-width: 600px;
+  width: 90%; /* Adjusted width for 100% zoom */
+  max-width: 600px; /* Max width to prevent overflow */
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   transform-style: preserve-3d;
@@ -57,7 +49,7 @@ body {
 
 /* Glowing Text Animation */
 h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: 2.5rem; /* Fixed font size for 100% zoom */
   font-weight: 800;
   color: #ffffff;
   text-transform: uppercase;
@@ -83,10 +75,10 @@ h1 {
 
 #city-input {
   flex: 1;
-  padding: 14px;
+  padding: 12px; /* Adjusted padding for 100% zoom */
   border: 2px solid rgba(255, 255, 255, 0.3);
   border-radius: 10px;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 1rem; /* Fixed font size for 100% zoom */
   outline: none;
   background: rgba(255, 255, 255, 0.1);
   color: #ffffff;
@@ -102,12 +94,12 @@ h1 {
 
 /* 3D Button Animation */
 #search-btn {
-  padding: 14px 24px;
+  padding: 12px 24px; /* Adjusted padding for 100% zoom */
   border: none;
   border-radius: 10px;
   background: linear-gradient(135deg, #00ffea, #008080);
   color: #fff;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 1rem; /* Fixed font size for 100% zoom */
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
@@ -146,7 +138,7 @@ h1 {
 }
 
 .weather-info h2 {
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: 1.8rem; /* Fixed font size for 100% zoom */
   font-weight: 700;
   color: #00ffea;
   text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
@@ -154,166 +146,104 @@ h1 {
 }
 
 .weather-info p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: 1.2rem; /* Fixed font size for 100% zoom */
   font-weight: 600;
   margin: 5px 0;
 }
 
 .weather-info .temperature {
-  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-size: 2.5rem; /* Fixed font size for 100% zoom */
   font-weight: 800;
-  color: #000000;
+  color: #ffffff;
   text-shadow: 0 0 10px rgba(255, 0, 153, 0.6);
 }
 
 /* 3D Floating Weather Icon */
 .weather-info .icon {
-  width: clamp(80px, 20vw, 120px);
-  height: clamp(80px, 20vw, 120px);
+  width: 100px; /* Fixed size for 100% zoom */
+  height: 100px; /* Fixed size for 100% zoom */
   margin: 15px auto;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-size: 3rem; /* Fixed font size for 100% zoom */
   color: #00ffea;
   animation: rotateIcon 3s linear infinite, floating 3s infinite alternate ease-in-out;
+}
+
+@keyframes rotateIcon {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-10px); }
 }
 
 /* Fully Responsive Design */
 @media (max-width: 768px) {
   .container {
-    padding: 6vw;
+    padding: 15px; /* Adjusted padding for smaller screens */
   }
 
-  .search {
-    flex-direction: column;
+  h1 {
+    font-size: 2rem; /* Adjusted font size for smaller screens */
   }
 
   #city-input, #search-btn {
-    width: 100%;
+    font-size: 0.9rem; /* Adjusted font size for smaller screens */
+  }
+
+  .weather-info h2 {
+    font-size: 1.5rem; /* Adjusted font size for smaller screens */
+  }
+
+  .weather-info p {
+    font-size: 1rem; /* Adjusted font size for smaller screens */
+  }
+
+  .weather-info .temperature {
+    font-size: 2rem; /* Adjusted font size for smaller screens */
+  }
+
+  .weather-info .icon {
+    width: 80px; /* Adjusted size for smaller screens */
+    height: 80px; /* Adjusted size for smaller screens */
+    font-size: 2.5rem; /* Adjusted font size for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  h1 {
-    font-size: clamp(1.8rem, 5vw, 2rem);
-  }
-}
-
-@media (max-width: 360px) {
   .container {
-    padding: 4vw;
-  }
-}
-
-/* Additional Responsive Adjustments */
-@media (max-width: 768px) {
-  body {
-    padding: 3vw;
-  }
-
-  .container {
-    max-width: 100%;
-    padding: 4vw;
+    padding: 10px; /* Adjusted padding for mobile screens */
   }
 
   h1 {
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-size: 1.5rem; /* Adjusted font size for mobile screens */
   }
 
   #city-input, #search-btn {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: 0.8rem; /* Adjusted font size for mobile screens */
   }
 
   .weather-info h2 {
-    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-size: 1.2rem; /* Adjusted font size for mobile screens */
   }
 
   .weather-info p {
-    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-size: 0.9rem; /* Adjusted font size for mobile screens */
   }
 
   .weather-info .temperature {
-    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    font-size: 1.8rem; /* Adjusted font size for mobile screens */
   }
 
   .weather-info .icon {
-    width: clamp(60px, 20vw, 100px);
-    height: clamp(60px, 20vw, 100px);
-    font-size: clamp(2rem, 5vw, 3rem);
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding: 2vw;
-  }
-
-  .container {
-    padding: 3vw;
-  }
-
-  h1 {
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-  }
-
-  #city-input, #search-btn {
-    font-size: clamp(0.8rem, 2vw, 1rem);
-  }
-
-  .weather-info h2 {
-    font-size: clamp(1rem, 3vw, 1.5rem);
-  }
-
-  .weather-info p {
-    font-size: clamp(0.8rem, 2vw, 1rem);
-  }
-
-  .weather-info .temperature {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-  }
-
-  .weather-info .icon {
-    width: clamp(50px, 20vw, 80px);
-    height: clamp(50px, 20vw, 80px);
-    font-size: clamp(1.8rem, 5vw, 2.5rem);
-  }
-}
-
-@media (max-width: 360px) {
-  body {
-    padding: 1vw;
-  }
-
-  .container {
-    padding: 2vw;
-  }
-
-  h1 {
-    font-size: clamp(1rem, 5vw, 1.5rem);
-  }
-
-  #city-input, #search-btn {
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
-  }
-
-  .weather-info h2 {
-    font-size: clamp(0.9rem, 3vw, 1.2rem);
-  }
-
-  .weather-info p {
-    font-size: clamp(0.7rem, 2vw, 0.9rem);
-  }
-
-  .weather-info .temperature {
-    font-size: clamp(1.2rem, 5vw, 1.8rem);
-  }
-
-  .weather-info .icon {
-    width: clamp(40px, 20vw, 60px);
-    height: clamp(40px, 20vw, 60px);
-    font-size: clamp(1.5rem, 5vw, 2rem);
+    width: 60px; /* Adjusted size for mobile screens */
+    height: 60px; /* Adjusted size for mobile screens */
+    font-size: 2rem; /* Adjusted font size for mobile screens */
   }
 }
